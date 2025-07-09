@@ -21,8 +21,10 @@ const { src = '/astronaut-hero-img.webp' }: Props = Astro.props
   <div class="container">
     <div class="grid grid-cols-1 items-center gap-24 lg:grid-cols-2">
       <div class="flex flex-col items-center gap-8 md:items-start">
-        <h1 class="text-center text-6xl md:text-left lg:text-8xl">
-          <slot><span class="text-gradient">Accessible</span> Starter for Astro</slot>
+        <h1 class="text-center text-6xl md:text-left lg:text-6xl">
+          <slot>
+            ¿Tu sitio web está haciendo que <span class="text-gradient">pierdas clientes sin darte cuenta</span></slot
+          >
         </h1>
         <div class="flex flex-col gap-3 min-[500px]:flex-row">
           <a class="button has-icon" href="https://github.com/incluud/accessible-astro-starter">
