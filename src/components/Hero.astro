@@ -1,43 +1,43 @@
 ---
 import { Icon } from 'astro-icon/components'
-import { Image } from 'astro:assets'
-
-/**
- * Hero Component
- *
- * @description A component that displays a hero section with a title, description, and image
- */
-interface Props {
-  /**
-   * The source URL for the image
-   */
-  src?: string
-}
-
-const { src = '/astronaut-hero-img.webp' }: Props = Astro.props
 ---
 
-<section class="hero my-24">
-  <div class="container">
-    <div class="grid grid-cols-1 items-center gap-24 lg:grid-cols-2">
-      <div class="flex flex-col items-center gap-8 md:items-start">
-        <h1 class="text-center text-6xl md:text-left lg:text-6xl">
-          <slot>
-            ¿Tu sitio web está haciendo que <span class="text-gradient">pierdas clientes sin darte cuenta</span></slot
-          >
-        </h1>
-        <div class="flex flex-col gap-3 min-[500px]:flex-row">
-          <a class="button has-icon" href="https://github.com/incluud/accessible-astro-starter">
-            <Icon name="lucide:star" />
-            Star on GitHub
-          </a>
-          <a class="button has-icon color-secondary" href="https://accessible-astro.incluud.dev/">
-            <Icon name="lucide:bookmark" />
-            Read the docs
-          </a>
-        </div>
-      </div>
-      <Image class="hidden lg:block" src={src} alt="" decoding="async" width={800} height={600} loading="eager" />
+<section class="">
+  <div class="container mx-auto px-4 py-20 lg:py-32">
+    <div class="mx-auto max-w-4xl text-center text-blue-950">
+      <!-- <div
+        class="badge mb-6 inline-flex items-center justify-center gap-2 rounded-full border-indigo-600/30 bg-indigo-600 px-2 py-1 text-sm text-white hover:bg-indigo-400/30">
+        <span>🚀</span>
+        <span>Análisis Gratuito de tu Sitio</span>
+      </div> -->
+      <h1 class="mb-6 text-4xl leading-[1.1] font-bold md:text-6xl lg:text-7xl">
+        <slot>¿Tu sitio web te está costando clientes en lugar de generarlos?</slot>
+      </h1>
+      <p class="mx-auto mb-8 max-w-3xl text-xl leading-relaxed md:text-xl">
+        Recibe un diagnóstico gratuito y un plan de acción para convertir tu web en tu vendedor #1. Sin tecnisismos,
+        solo pasos claros a seguir
+      </p>
+    </div>
+
+    <div class="flex flex-col items-center justify-center gap-6">
+      <a class="button has-icon text-white hover:shadow-md" href="https://github.com/incluud/accessible-astro-starter">
+        Descubrir mis Oportunidades
+        <Icon name="lucide:arrow-right" />
+      </a>
+      <ul class="space-between flex items-center gap-4">
+        <li class="flex items-center justify-center gap-2">
+          <Icon name="lucide:circle-check-big" class="text-green-500" />
+          <span>Sin spam</span>
+        </li>
+        <li class="flex items-center justify-center gap-2">
+          <Icon name="lucide:circle-check-big" class="text-green-500" />
+          <span>100% Gratuito</span>
+        </li>
+        <li class="flex items-center justify-center gap-2">
+          <Icon name="lucide:circle-check-big" class="text-green-500" />
+          <span>Resultados en 48 horas</span>
+        </li>
+      </ul>
     </div>
   </div>
 </section>
@@ -56,5 +56,18 @@ const { src = '/astronaut-hero-img.webp' }: Props = Astro.props
     background-clip: border-box;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
+  }
+  :global(.darkmode .badge) {
+    background-color: var(--color-green-500);
+  }
+
+  :global(.darkmode h1) {
+    color: var(--color-white);
+  }
+
+  .button {
+    border-color: var(--color-blue-600);
+    background-color: var(--color-blue-600);
+    color: var(--color-white);
   }
 </style>
